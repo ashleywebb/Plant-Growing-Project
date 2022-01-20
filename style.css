@@ -1,0 +1,46 @@
+body {
+  background-color: #FADADD;
+}
+
+body > h1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 9vw;
+  color: rgb(75, 122, 71);
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+body > p {
+  font-family: century gothic;
+  color: #654321;
+  font-size: 2.5vw;
+}
+
+
+body > .plantButtons > #plant1{
+  background-color: rgb(75, 122, 71);
+  font-family: 'Indie Flower', cursive;
+  font-size: 3vw;
+  color: white;
+  margin: 1vw;
+  padding: 2vw;
+  
+}
+
+body > .plantButtons > #plant2{
+  background-color: rgb(75, 122, 71);
+  font-family: 'Indie Flower', cursive;
+  font-size: 3vw;
+  color: white;
+  padding: 2vw;
+  margin: 1vw;
+}
+
+body > .plantButtons > #plant3{
+  background-color: rgb(75, 122, 71);
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  font-size: 3vw;
+  padding: 2vw;
+  margin: 1vw;
+}
