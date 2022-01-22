@@ -1,3 +1,5 @@
+/* Home Screen */
+
 button {
   background-color: rgba(255, 255, 255, 0);
   border: rgba(255, 255, 255, 0);
@@ -5,12 +7,6 @@ button {
 
 body {
   background-color: #FADADD;
-}
-
-body > p {
-  font-family: century gothic, sans-serif;
-  color: #654321;
-  position: absolute;
 }
 
 body > .plant-container {
@@ -23,6 +19,8 @@ body > .plant-name-container {
   font-family: century gothic, sans-serif;
   display: flex;
   flex-direction: row;
+  color: #654321;
+  font-size: 1.5vw;
 }
 
 body > h1 {
@@ -65,3 +63,5 @@ body > .plantButtons > #plant3{
   padding: 2vw;
   margin: 1vw;
 }
+
+/* Gameplay Screen */
