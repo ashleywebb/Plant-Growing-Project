@@ -2,6 +2,7 @@
 <html>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Londrina+Shadow&family=Poiret+One&family=Rubik+Beastly&family=Shadows+Into+Light&family=Zen+Maru+Gothic:wght@300;900&display=swap');
+@import url("https://use.typekit.net/ymq7zsh.css");
 </style>
   <head>
     <meta charset="utf-8">
@@ -11,15 +12,50 @@
   </head>
   <body>
     <h1>Grow Sum' Plants!</h1>
-    <p>What type of plant do you want to take care of?</p>
-    <img> <img src=https://i.imgur.com/OEBQlvu.png alt="Italian Trulli" width="100"length="135"> </img>
-    <p>How many plants do you want?</p>
+    <h2>What type of plant do you want to take care of?</h2>
+
+    <div class="plant-container">
+    <div><button> 
+        <img> <img src=https://i.imgur.com/OEBQlvu.png alt="Blue Cactus" width="100"length="135"> </img>
+      </button>
+    </div>
+    <div><button>      
+        <img> <img src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="100"length="135"> </img>
+      </button>
+    </div>
+  </div>
+
+  <div class="plant-name-container">
+    <div> <p> 
+      Blue Cactus 
+    </p> </div>
+    <div> <p> 
+      Black Rose 
+    </p> </div>
+    </div>
+    
+    <h2>How many plants do you want?</h2>
     <script src="script.js"></script>
     <content class='plantButtons'>
       <button id="plant1">1</button>
       <button id="plant2">2</button>
       <button id="plant3">3</button>
     </content>
-    
+
+    <button class="open">1</button>
+    <div id="modal">
+      <h2>Hello World</h2>
+      <p>This is my example modal</p>
+      <button class="modal__button">I am Ready!!!</button>
+    </div>
+    <script src="script.js"></script>
+
+    <button class="open">2</button>
+    <div id="modal">
+      <h2>Hello World</h2>
+      <p>This is my example modal</p>
+      <button class="modal__button">I am Ready!!!</button>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
