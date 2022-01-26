@@ -9,6 +9,13 @@ body {
   background-color: #FADADD;
 }
 
+body > p {
+  font-family: century gothic, sans-serif;
+  color: #654321;
+  margin: 2rem 0 0 2rem;
+  padding: 0px;
+}
+
 body > .plant-container {
   font-family: century gothic, sans-serif;
   display: flex;
@@ -65,3 +72,11 @@ body > .plantButtons > #plant3{
 }
 
 /* Gameplay Screen */
+
+body > .countdownTimer {
+  font-family: 'Indie Flower', cursive;
+}
+
+body > #countdownTimer > #countdownTimerDisplay {
+  font-family: century gothic;
+}
