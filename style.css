@@ -16,20 +16,6 @@ body > p {
   padding: 0px;
 }
 
-body > .plant-container {
-  font-family: century gothic, sans-serif;
-  display: flex;
-  flex-direction: row;
-}
-
-body > .plant-name-container {
-  font-family: century gothic, sans-serif;
-  display: flex;
-  flex-direction: row;
-  color: #654321;
-  font-size: 1.5vw;
-}
-
 body > h1 {
   font-family: 'Indie Flower', cursive;
   font-size: 9vw;
@@ -71,12 +57,55 @@ body > .plantButtons > #plant3{
   margin: 1vw;
 }
 
-/* Gameplay Screen */
+/* Gameplay Modal */
 
-body > .countdownTimer {
+/* body > .countdownTimer {
   font-family: 'Indie Flower', cursive;
 }
 
 body > #countdownTimer > #countdownTimerDisplay {
   font-family: century gothic;
+} */
+
+.open {
+  font-family: 'Indie Flower', cursive;
+  font-size: 3vw;
 }
+
+#modal {
+  display: none;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  border: 5px solid white;
+  padding: 8px;
+}
+
+#modal > .userElements{
+  display: flex;
+  justify-content: right;
+}
+
+#modal > #warning1 {
+  font-family: century-gothic, sans-serif;
+  font-size: 3vw;
+  text-align: left;
+}
+
+#modal > #warning2 {
+  font-family: century-gothic, sans-serif;
+  font-size: 3vw;
+  text-align: left;
+}
+
+#modal > .userPlants {
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+.show {
+  display: flex!important;
+}
+

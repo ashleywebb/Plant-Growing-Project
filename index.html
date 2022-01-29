@@ -4,52 +4,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Londrina+Shadow&family=Poiret+One&family=Rubik+Beastly&family=Shadows+Into+Light&family=Zen+Maru+Gothic:wght@300;900&display=swap');
 @import url("https://use.typekit.net/ymq7zsh.css");
 </style>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>replit</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
+  
   <body>
     <h1>Grow Sum' Plants!</h1>
+    <p>Directions: Choose your plant of choice and how many you want to take care of! 
+        Click 'Start!' and you will begin the game. Drag and drop either the sun, water, or plant pot based on which plant needs it. Be sure to do it quick or your plant may die! </p>
     <h2>What type of plant do you want to take care of?</h2>
 
-    <div class="plant-container">
-    <div><button> 
+    <div class="plantContainer">
+     <button id="blackRose">      
+        <img> <img src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="100"length="135">
+        </img>
+      </button>
+      <button id="blueCactus"> 
         <img> <img src=https://i.imgur.com/OEBQlvu.png alt="Blue Cactus" width="100"length="135"> </img>
       </button>
-    </div>
-    <div><button>      
-        <img> <img src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="100"length="135"> </img>
-      </button>
-    </div>
+      <button id="rainbowPeony">
+      <img><img src=https://i.imgur.com/gad1THh.png alt="Rainbow Peony" width="100"length="135"></img>
+    </button>
   </div>
-
-  <div class="plant-name-container">
-    <div> <p> 
-      Blue Cactus - 
-    </p> </div>
-    <div> <p> 
-      - Black Rose -
-    </p> </div>
-    <div> <p> 
-      - Rainbow Peony 
-    </p> </div>
-    </div>
     
     <h2>How many plants do you want?</h2>
-    <script src="script.js"></script>
-    <content class='plantButtons'>
+    
+    <div class='plantButtons'>
       <button id="plant1">
-        <a href="index2.html"> 1 
-      </button></a>
+          1 
+      </button>
       <button id="plant2">
-        <a href="index2.html"> 2 
-      </button></a>
+         2 
+      </button>
       <button id="plant3">
-        <a href="index2.html"> 3
-      </button></a>
-    </content>
+         3 
+      </button>
+    </div>
 
+    <button class="open">Start!</button>
+    <div id="modal">
+
+      <div class="userElements">
+        <button id="sun"> <img><img src=https://i.imgur.com/SFXY27a.png alt="Sun" width="100"length="100"> </img>
+        </button>
+        <button id="water"><img><img src=https://i.imgur.com/KbBnNqv.png alt="Water" width="65"length="65"> </img>
+        <button id="water"><img><img src=https://i.imgur.com/SQaQi0A.png alt="Pot" width="100"length="100"></img>
+      </div>
+      
+      <p id="warning1">This is a warning</p>
+      <p id="warning2">This is a warning</p>
+
+      <div class='userPlants'>
+      <button id="userPlantBtn1"> 
+        <img id="userPlant1" src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="200"length="270"> </img>
+      </button>
+      <button id="userPlantBtn2"> 
+        <img id="userPlant2" src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="200"length="270"> </img>
+      </button>
+      <button id="userPlantBtn3"> 
+        <img id="userPlant3" src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="200"length="270"> </img>
+
+      
+      </div>
+      
+      
+
+      
+      <button class="modal__button">Quit</button>
+    </div>
+
+
+    <script src="script.js"></script>
   </body>
+
+  
 </html>
