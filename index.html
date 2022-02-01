@@ -17,6 +17,7 @@
     <h1>Grow Sum' Plants!</h1>
     <p>Directions: Choose your plant of choice and how many you want to take care of! 
         Click 'Start!' and you will begin the game. Drag and drop either the sun, water, or plant pot based on which plant needs it. Be sure to do it quick or your plant may die! </p>
+    <p>Plants are numbered 0 - 2 left to right, good luck!</p>
     <h2>What type of plant do you want to take care of?</h2>
 
     <div class="plantContainer">
@@ -49,24 +50,24 @@
     <button class="open">Start!</button>
     <div id="modal">
 
-      <div class="userElements">
+      <div class="userElements" draggable="true">
         <button id="sun"> <img><img src=https://i.imgur.com/SFXY27a.png alt="Sun" width="100"length="100"> </img>
         </button>
         <button id="water"><img><img src=https://i.imgur.com/KbBnNqv.png alt="Water" width="65"length="65"> </img>
-        <button id="water"><img><img src=https://i.imgur.com/SQaQi0A.png alt="Pot" width="100"length="100"></img>
+        <button id="pot"><img><img src=https://i.imgur.com/SQaQi0A.png alt="Pot" width="100"length="100"></img>
       </div>
       
       <p id="warning1">This is a warning</p>
       <p id="warning2">This is a warning</p>
 
-      <div class='userPlants'>
-      <button id="userPlantBtn1"> 
+      <div class="userPlants">
+      <button class="userPlants""> 
         <img id="userPlant1" src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="200"length="270"> </img>
       </button>
-      <button id="userPlantBtn2"> 
+      <button class="userPlants"> 
         <img id="userPlant2" src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="200"length="270"> </img>
       </button>
-      <button id="userPlantBtn3"> 
+      <button class="userPlants"> 
         <img id="userPlant3" src=https://i.imgur.com/TVHYb5Y.png alt="Black Rose" width="200"length="270"> </img>
 
       
@@ -75,7 +76,9 @@
       
 
       
-      <button class="modal__button">Quit</button>
+      <button class="modal__button">
+        <a href="index2.html">Quit</button></a>
+
     </div>
 
 
