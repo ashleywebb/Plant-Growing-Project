@@ -30,6 +30,7 @@ const allUserPlants = document.querySelectorAll('.userPlants')
 const userPlant1 = document.querySelector('.userPlants > .userPlants > #userPlant1')
 const userPlant2 = document.querySelector('.userPlants > .userPlants > #userPlant2')
 const userPlant3 = document.querySelector('.userPlants > .userPlants > #userPlant3')
+let playerLevel = 0;
 
 // modal things
 const modal = document.querySelector('#modal');
@@ -140,12 +141,12 @@ peony.addEventListener('click', (evt) => {
 })
 
 plant1.addEventListener('click', (evt) => {
-  userPlant1.remove();
+  userPlant2.remove();
   userPlant3.remove();
 })
 
 plant2.addEventListener('click', (evt) => {
-  userPlant1.remove();
+  userPlant3.remove();
 })
 
 openEl.addEventListener('click', (evt) => {
@@ -197,10 +198,13 @@ let randomNumber = Math.random();
 // userplant1 drags
 userPlant1.addEventListener('dragenter', (evt) => {
   dragEnter;
-  console.log("Plant 1!")
+   console.log("Plant 1!")
   console.log(classUserPlant1.sunPoints);
   console.log(classUserPlant1.waterPoints);
   console.log(classUserPlant1.potPoints);
+  if (classUserPlant1.selected == true && classUserPlant2.selected == true && classUserPlant3.selected == true) {
+    location.href="index2.html";
+  }
   randomNumber = Math.random();
   console.log(randomNumber);
    if (sunActivated = true) {
@@ -212,6 +216,7 @@ userPlant1.addEventListener('dragenter', (evt) => {
       classUserPlant1.sunPoints += 1;
     } else {
       classUserPlant1.sunPoints +=7;
+      warning2.innerHTML = "Computer sabotaged!";
     }
     
   } else if (waterActivated = true) {
@@ -227,14 +232,10 @@ userPlant1.addEventListener('dragenter', (evt) => {
   } else if (potActivated = true) {
     if (randomNumber > 0.6 && randomNumber <= 0.9) {
       classUserPlant1.potPoints -= 0.5;
-    // } else if (warning2.innerHTML === "Quick! Give a bigger pot to plant " + (1) + "!"){
-    //   classUserPlant1.potPoints += 0.5;
     } else {
       classUserPlant1.potPoints += 7;
   }}
-
-
-  }})
+}})
 
 userPlant1.addEventListener('dragover', (evt) => {
   dragOver;
@@ -247,90 +248,77 @@ userPlant1.addEventListener('drop', (evt) => {
 userPlant1.addEventListener('dragleave', (evt) => {
   dragLeave;
   console.log("Plant 1!")
-  console.log(classUserPlant1.sunPoints);
-  console.log(classUserPlant1.waterPoints);
-  console.log(classUserPlant1.potPoints);
-  let randomNumber1 = Math.random()
-  if (sunActivated = true) {
-    classUserPlant1.waterPoints += 5;
-    classUserPlant1.potPoints += 5;
-    if (randomNumber1 <= 0.2){
-    // } else if (warning2.innerHTML === "Quick! Give sunlight to plant " + (1) + "!") {
-      classUserPlant1.sunPoints -= 1;
-    } else {
-      classUserPlant1.sunPoints -=7;
-    }
-  } else if (waterActivated = true) {
-    classUserPlant1.sunPoints += 5;
-    classUserPlant1.waterPoints -= 7;
-    classUserPlant2.potPoints += 5;
-    if(randomNumber1 > 0.2 && randomNumber1 <= 0.6){
-      classUserPlant1.waterPoints -= 2;
-    // } else if (warning1.innerHTML === "Quick! Give water to plant " + (1) + "!"){
-    //   classUserPlant1.waterPoints -= 2;
-    //  } 
-  }} else if (potActivated = true) {
-    if (randomNumber1 > 0.6 && randomNumber1 <= 0.9) {
-      classUserPlant1.potPoints += 0.5;
-    // } else if (warning2.innerHTML === "Quick! Give a bigger pot to plant " + (1) + "!"){
-    //   classUserPlant1.potPoints += 0.5;
-    } else {
-      classUserPlant1.potPoints -= 7;
+  console.log(classUserPlant1)
+  if (classUserPlant1.selected == true && classUserPlant2.selected == true && classUserPlant3.selected == true) {
+    location.href="index2.html";
   }
-  
-}})
+    if (classUserPlant1.sunPoints > 20) {
+    warning1.innerHTML = "Oh no! Plant 1 dried up :("
+    console.log("Oh no! Your plant dried up :(")
+    classUserPlant1.selected = true;
+    userPlant1.remove();
+  } else if (classUserPlant1.sunPoints <= 0) {
+    warning1.innerHTML = "Oh no! Plant 1 didn't get enough sun! :("
+    console.log("Oh no! Your plant didn't get enough sun!")
+    classUserPlant1.selected = true;
+    userPlant1.remove();
+  } else if (classUserPlant1.waterPoints > 25) {
+    warning1.innerHTML = "Oh no! Plant 1 drowned!"
+    console.log("Oh no! Your plant drowned!")
+    classUserPlant1.selected = true;
+    userPlant1.remove();
+  } else if (classUserPlant1.waterPoints <= 0) {
+    warning1.innerHTML = "Oh no! Plant 1 dried up :("
+    console.log("Oh no! Your plant dried up :(")
+    classUserPlant1.selected = true;
+    userPlant1.remove();
+  } else if (classUserPlant1.potPoints > 17) {
+    warning1.innerHTML = "Oh no! Plant 1's pot's too large!"
+    console.log("Oh no! Your pot's too large! :(")
+    classUserPlant1.selected = true;
+    userPlant1.remove();
+  } else if (classUserPlant1.potPoints <= 0) {
+    warning1.innerHTML = "Oh no! Plant 1's pot's too small!"
+    console.log("Oh no! Your pot's too small! :(")
+    classUserPlant1.selected = true;
+    userPlant1.remove();
+  }
+})
+
+
 
 //userplant2 drags
 userPlant2.addEventListener('dragenter', (evt) => {
   dragEnter;
-  console.log("plant 2!")
-  console.log(classUserPlant2.sunPoints);
-  console.log(classUserPlant2.waterPoints);
-  console.log(classUserPlant2.potPoints);
-  let randomNumber2 = Math.random()
+    console.log("Plant 2!")
+  console.log(classUserPlant2);
+   if (classUserPlant1.selected == true && classUserPlant2.selected == true && classUserPlant3.selected == true) {
+    location.href="index2.html";
+  }
+  let randomNumber4 = Math.random();
    if (sunActivated = true) {
-    if (randomNumber2 <= 0.2){
-    // } else if (warning2.innerHTML === "Quick! Give sunlight to plant " + (1) + "!") {
+    if (randomNumber4 <= 0.2){
       classUserPlant2.sunPoints += 1;
     } else {
       classUserPlant2.sunPoints +=7;
+      warning2.innerHTML = "Computer sabotaged!"
     }
     classUserPlant2.waterPoints -= 5;
     classUserPlant2.potPoints -= 5;
 
   } else if (waterActivated = true) {
     classUserPlant2.sunPoints -= 5;
-    if(randomNumber2 > 0.2 && randomNumber2 <= 0.6){
-      classUserPlant2.waterPoints += 2;
-    // } else if (warning1.innerHTML === "Quick! Give water to plant " + (1) + "!"){
-    //   classUserPlant1.waterPoints -= 2;
-    //  } 
-     classUserPlant2.waterPoints += 7;
-     classUserPlant2.potPoints -= 5;
+    if(randomNumber4 > 0.2 && randomNumber4 <= 0.6){
+     classUserPlant3.waterPoints += 2;
+     classUserPlant3.waterPoints += 7;
+     classUserPlant3.potPoints -= 5;
   } else if (potActivated = true) {
-    if (randomNumber2 > 0.6 && randomNumber2 <= 0.9) {
+    if (randomNumber4 > 0.6 && randomNumber4 <= 0.9) {
       classUserPlant2.potPoints -= 0.5;
-    // } else if (warning2.innerHTML === "Quick! Give a bigger pot to plant " + (1) + "!"){
-    //   classUserPlant1.potPoints += 0.5;
     } else {
       classUserPlant2.potPoints += 7;
+      warning2.innerHTML = "Computer sabotaged!"
   }}
-
-  if (classUserPlant2.sunPoints > 20) {
-    console.log("Oh no! Your plant dried up :(")
-  } else if (classUserPlant2.sunPoints <= 0) {
-    console.log("Oh no! Your plant didn't get enough sun!")
-  } else if (classUserPlant2.waterPoints > 25) {
-    console.log("Oh no! Your plant drowned!")
-  } else if (classUserPlant2.waterPoints <= 0) {
-    console.log("Oh no! Your plant dried up :(")
-  } else if (classUserPlant2.potPoints > 17) {
-    console.log("Oh no! Your pot's too large! :(")
-  } else if (classUserPlant2.potPoints <= 0) {
-    console.log("Oh no! Your pot's too small! :(")
-  }
-
-
 }})
 
 userPlant2.addEventListener('dragover', (evt) => {
@@ -339,6 +327,8 @@ userPlant2.addEventListener('dragover', (evt) => {
 
 userPlant2.addEventListener('drop', (evt) => {
   dragDrop;
+  console.log("plant 2!")
+  console.log(classUserPlant2);
 })
 
 userPlant2.addEventListener('dragleave', (evt) => {
@@ -347,51 +337,54 @@ userPlant2.addEventListener('dragleave', (evt) => {
   console.log(classUserPlant2.sunPoints);
   console.log(classUserPlant2.waterPoints);
   console.log(classUserPlant2.potPoints);
-   let randomNumber3 = Math.random()
-   if (sunActivated = true) {
-    if (randomNumber3 <= 0.2){
-    // } else if (warning2.innerHTML === "Quick! Give sunlight to plant " + (1) + "!") {
-      classUserPlant2.sunPoints -= 1;
-    } else {
-      classUserPlant2.sunPoints -=7;
-    }
-    classUserPlant2.waterPoints += 5;
-    classUserPlant2.potPoints += 5;
-
-  } else if (waterActivated = true) {
-    classUserPlant2.sunPoints += 5;
-    if(randomNumber3 > 0.2 && randomNumber3 <= 0.6){
-      classUserPlant2.waterPoints -= 2;
-    // } else if (warning1.innerHTML === "Quick! Give water to plant " + (1) + "!"){
-    //   classUserPlant1.waterPoints -= 2;
-    //  } 
-     classUserPlant2.waterPoints -= 7;
-     classUserPlant2.potPoints += 5;
-  } else if (potActivated = true) {
-    if (randomNumber3 > 0.6 && randomNumber3 <= 0.9) {
-      classUserPlant2.potPoints += 0.5;
-    // } else if (warning2.innerHTML === "Quick! Give a bigger pot to plant " + (1) + "!"){
-    //   classUserPlant1.potPoints += 0.5;
-    } else {
-      classUserPlant2.potPoints -= 7;
-  }}
-
-}})
+  if (classUserPlant2.sunPoints > 20) {
+    warning1.html = "Oh no! Plant 2 dried up!";
+    console.log("Oh no! Your plant dried up :(")
+    classUserPlant2.selected = true;
+    userPlant2.remove();
+  } else if (classUserPlant2.sunPoints <= 0) {
+    warning1.html = "Oh no! Plant 2 didn't get enough sun!";
+    console.log("Oh no! Your plant didn't get enough sun!")
+    classUserPlant2.selected = true;
+    userPlant2.remove();
+  } else if (classUserPlant2.waterPoints > 25) {
+    warning1.html = "Oh no! Plant 2 drowned!"
+    console.log("Oh no! Your plant drowned!")
+    classUserPlant2.selected = true;
+    userPlant2.remove();
+  } else if (classUserPlant2.waterPoints <= 0) {
+    warning1.html = "Oh no! Plant 2 dried up"
+    console.log("Oh no! Your plant dried up :(")
+    classUserPlant2.selected = true;
+    userPlant2.remove();
+  } else if (classUserPlant2.potPoints > 17) {
+    warning1.html = "Oh no! Plant 2's pot is too large!"
+    console.log("Oh no! Your pot's too large! :(")
+    classUserPlant2.selected = true;
+    userPlant2.remove();
+  } else if (classUserPlant2.potPoints <= 0) {
+    warning1.html = "Oh no! Plant 2's pot is too small!"
+    console.log("Oh no! Your pot's too small! :(")
+    classUserPlant2.selected = true;
+    userPlant2.remove();
+  }
+})
 
 // userplant3 drags
 userPlant3.addEventListener('dragenter', (evt) => {
   dragEnter;
   console.log("Plant 3!")
-  console.log(classUserPlant3.sunPoints);
-  console.log(classUserPlant3.waterPoints);
-  console.log(classUserPlant3.potPoints);
+  console.log(classUserPlant3);
+   if (classUserPlant1.selected == true && classUserPlant2.selected == true && classUserPlant3.selected == true) {
+    location.href="index2.html";
+  }
   let randomNumber4 = Math.random();
    if (sunActivated = true) {
     if (randomNumber4 <= 0.2){
-    // } else if (warning2.innerHTML === "Quick! Give sunlight to plant " + (1) + "!") {
       classUserPlant3.sunPoints += 1;
     } else {
       classUserPlant3.sunPoints +=7;
+      warning2.innerHTML = "Computer sabotaged!"
     }
     classUserPlant3.waterPoints -= 5;
     classUserPlant3.potPoints -= 5;
@@ -400,35 +393,15 @@ userPlant3.addEventListener('dragenter', (evt) => {
     classUserPlant3.sunPoints -= 5;
     if(randomNumber4 > 0.2 && randomNumber4 <= 0.6){
       classUserPlant3.waterPoints += 2;
-    // } else if (warning1.innerHTML === "Quick! Give water to plant " + (1) + "!"){
-    //   classUserPlant1.waterPoints -= 2;
-    //  } 
      classUserPlant3.waterPoints += 7;
      classUserPlant3.potPoints -= 5;
   } else if (potActivated = true) {
     if (randomNumber4 > 0.6 && randomNumber4 <= 0.9) {
       classUserPlant3.potPoints -= 0.5;
-    // } else if (warning2.innerHTML === "Quick! Give a bigger pot to plant " + (1) + "!"){
-    //   classUserPlant1.potPoints += 0.5;
     } else {
       classUserPlant3.potPoints += 7;
+      warning2.innerHTML = "Computer sabotaged!"
   }}
-
-  if (classUserPlant3.sunPoints > 20) {
-    console.log("Oh no! Your plant dried up :(")
-  } else if (classUserPlant3.sunPoints <= 0) {
-    console.log("Oh no! Your plant didn't get enough sun!")
-  } else if (classUserPlant3.waterPoints > 25) {
-    console.log("Oh no! Your plant drowned!")
-  } else if (classUserPlant3.waterPoints <= 0) {
-    console.log("Oh no! Your plant dried up :(")
-  } else if (classUserPlant3.potPoints > 17) {
-    console.log("Oh no! Your pot's too large! :(")
-  } else if (classUserPlant3.potPoints <= 0) {
-    console.log("Oh no! Your pot's too small! :(")
-  }
-
-
 }})
 
 userPlant3.addEventListener('dragover', (evt) => {
@@ -437,7 +410,6 @@ userPlant3.addEventListener('dragover', (evt) => {
 
 userPlant3.addEventListener('drop', (evt) => {
   dragDrop;
-  timerStarts;
 })
 
 userPlant3.addEventListener('dragleave', (evt) => {
@@ -446,33 +418,41 @@ userPlant3.addEventListener('dragleave', (evt) => {
   console.log(classUserPlant3.sunPoints);
   console.log(classUserPlant3.waterPoints);
   console.log(classUserPlant3.potPoints);
-  let randomNumber5 = Math.random();
-   if (sunActivated = true) {
-    if (randomNumber5 <= 0.2){
-    // } else if (warning2.innerHTML === "Quick! Give sunlight to plant " + (1) + "!") {
-      classUserPlant3.sunPoints -= 1;
-    } else {
-      classUserPlant3.sunPoints -=7;
-    }
-    classUserPlant3.waterPoints += 5;
-    classUserPlant3.potPoints += 5;
+  if (classUserPlant3.sunPoints > 20) {
+    warning1.innerHTML = "Oh no! Plant 3 dried up!"
+    console.log("Oh no! Your plant dried up :(")
+    classUserPlant3.selected = true;
+    userPlant3.remove();
+  } else if (classUserPlant3.sunPoints <= 0) {
+    warning1.innerHTML = "Oh no! Plant 3 didn't get enough sun!"
+    console.log("Oh no! Your plant didn't get enough sun!")
+    classUserPlant3.selected = true;
+    userPlant3.remove();
+  } else if (classUserPlant3.waterPoints > 25) {
+    warning1.innerHTML = "Oh no! Plant 3 drowned!"
+    console.log("Oh no! Your plant drowned!")
+    classUserPlant3.selected = true;
+    userPlant3.remove();
+  } else if (classUserPlant3.waterPoints <= 0) {
+    warning1.innerHTML = "Oh no! Plant 3 dried up!"
+    console.log("Oh no! Your plant dried up :(")
+    classUserPlant3.selected = true;
+    userPlant3.remove();
+  } else if (classUserPlant3.potPoints > 17) {
+    warning1.innerHTML = "Oh no! Plant 3's pot is too large!"
+    console.log("Oh no! Your pot's too large! :(")
+    classUserPlant3.selected = true;
+    userPlant3.remove();
+  } else if (classUserPlant3.potPoints <= 0) {
+    warning1.innerHTML = "Oh no! Plant 3's pot is too small!"
+    console.log("Oh no! Your pot's too small! :(")
+    classUserPlant3.selected = true;
+    userPlant3.remove();
+  }
 
-  } else if (waterActivated = true) {
-    classUserPlant3.sunPoints += 5;
-    if(randomNumber5 > 0.2 && randomNumber5 <= 0.6){
-      classUserPlant3.waterPoints -= 2;
-    // } else if (warning1.innerHTML === "Quick! Give water to plant " + (1) + "!"){
-    //   classUserPlant1.waterPoints -= 2;
-    //  } 
-     classUserPlant3.waterPoints -= 7;
-     classUserPlant3.potPoints += 5;
-  } else if (potActivated = true) {
-    if (randomNumber5 > 0.6 && randomNumber5 <= 0.9) {
-      classUserPlant3.potPoints += 0.5;
-    // } else if (warning2.innerHTML === "Quick! Give a bigger pot to plant " + (1) + "!"){
-    //   classUserPlant1.potPoints += 0.5;
-    } else {
-      classUserPlant3.potPoints -= 7;
-  }}
+  if (classUserPlant1.selected == true && classUserPlant2.selected == true && classUserPlant3.selected == true) {
+    location.href="index2.html";
+  }
+  
 
-}})
+})
