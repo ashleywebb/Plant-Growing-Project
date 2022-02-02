@@ -31,6 +31,7 @@ const userPlant1 = document.querySelector('.userPlants > .userPlants > #userPlan
 const userPlant2 = document.querySelector('.userPlants > .userPlants > #userPlant2')
 const userPlant3 = document.querySelector('.userPlants > .userPlants > #userPlant3')
 let playerLevel = 0;
+let level = document.querySelector('body > .level')
 
 // modal things
 const modal = document.querySelector('#modal');
@@ -211,9 +212,12 @@ userPlant1.addEventListener('dragenter', (evt) => {
     classUserPlant1.waterPoints -= 5;
     classUserPlant1.potPoints -= 5;
 
-    if (randomNumber <= 0.2){
+    if (randomNumber >= 0.2){
     // } else if (warning2.innerHTML === "Quick! Give sunlight to plant " + (1) + "!") {
       classUserPlant1.sunPoints += 1;
+      playerLevel += 1;
+      level.innerHTML = "You were at level: " + (playerLevel);
+      warning2.innerHTML = "The computer will not be kind!"
     } else {
       classUserPlant1.sunPoints +=7;
       warning2.innerHTML = "Computer sabotaged!";
@@ -224,16 +228,17 @@ userPlant1.addEventListener('dragenter', (evt) => {
     classUserPlant1.waterPoints += 7;
     classUserPlant2.potPoints -= 5;
 
-    if(randomNumber > 0.2 && randomNumber <= 0.6){
+    if(randomNumber > 0.5 && randomNumber <= 0.8){
       classUserPlant1.waterPoints += 2;
-    // } else if (warning1.innerHTML === "Quick! Give water to plant " + (1) + "!"){
-    //   classUserPlant1.waterPoints -= 2;
-    //  }  
   } else if (potActivated = true) {
-    if (randomNumber > 0.6 && randomNumber <= 0.9) {
+    if (randomNumber > 0.8 && randomNumber <= 0.9) {
       classUserPlant1.potPoints -= 0.5;
+      playerLevel += 1;
+      level.innerHTML = "You were at level: " + (playerLevel);
+      warning2.innerHTML = "The computer will not be kind!"
     } else {
       classUserPlant1.potPoints += 7;
+      warning2.innerHTML = "Computer sabotaged!"
   }}
 }})
 
@@ -297,8 +302,11 @@ userPlant2.addEventListener('dragenter', (evt) => {
   }
   let randomNumber4 = Math.random();
    if (sunActivated = true) {
-    if (randomNumber4 <= 0.2){
+    if (randomNumber4 >= 0.2){
       classUserPlant2.sunPoints += 1;
+      playerLevel += 1;
+      level.innerHTML = "You were at level: " + (playerLevel);
+      warning2.innerHTML = "The computer will not be kind!"
     } else {
       classUserPlant2.sunPoints +=7;
       warning2.innerHTML = "Computer sabotaged!"
@@ -308,13 +316,16 @@ userPlant2.addEventListener('dragenter', (evt) => {
 
   } else if (waterActivated = true) {
     classUserPlant2.sunPoints -= 5;
-    if(randomNumber4 > 0.2 && randomNumber4 <= 0.6){
+    if(randomNumber4 > 0.5 && randomNumber4 <= 0.8){
      classUserPlant3.waterPoints += 2;
      classUserPlant3.waterPoints += 7;
      classUserPlant3.potPoints -= 5;
   } else if (potActivated = true) {
-    if (randomNumber4 > 0.6 && randomNumber4 <= 0.9) {
+    if (randomNumber4 > 0.8 && randomNumber4 <= 0.9) {
       classUserPlant2.potPoints -= 0.5;
+      playerLevel += 1;
+      level.innerHTML = "You were at level: " + (playerLevel);
+      warning2.innerHTML = "The computer will not be kind!"
     } else {
       classUserPlant2.potPoints += 7;
       warning2.innerHTML = "Computer sabotaged!"
@@ -353,7 +364,7 @@ userPlant2.addEventListener('dragleave', (evt) => {
     classUserPlant2.selected = true;
     userPlant2.remove();
   } else if (classUserPlant2.waterPoints <= 0) {
-    warning1.html = "Oh no! Plant 2 dried up"
+    warning1.html = "Oh no! Plant 2 dried up from not enough water!"
     console.log("Oh no! Your plant dried up :(")
     classUserPlant2.selected = true;
     userPlant2.remove();
@@ -380,8 +391,11 @@ userPlant3.addEventListener('dragenter', (evt) => {
   }
   let randomNumber4 = Math.random();
    if (sunActivated = true) {
-    if (randomNumber4 <= 0.2){
+    if (randomNumber4 >= 0.2){
       classUserPlant3.sunPoints += 1;
+      playerLevel += 1;
+      level.innerHTML = "You were at level: " + (playerLevel);
+      warning2.innerHTML = "The computer will not be kind!"
     } else {
       classUserPlant3.sunPoints +=7;
       warning2.innerHTML = "Computer sabotaged!"
@@ -391,13 +405,16 @@ userPlant3.addEventListener('dragenter', (evt) => {
 
   } else if (waterActivated = true) {
     classUserPlant3.sunPoints -= 5;
-    if(randomNumber4 > 0.2 && randomNumber4 <= 0.6){
-      classUserPlant3.waterPoints += 2;
+    if(randomNumber4 > 0.5 && randomNumber4 <= 0.8){
+     classUserPlant3.waterPoints += 2;
      classUserPlant3.waterPoints += 7;
      classUserPlant3.potPoints -= 5;
+     playerLevel += 1;
   } else if (potActivated = true) {
-    if (randomNumber4 > 0.6 && randomNumber4 <= 0.9) {
+    if (randomNumber4 > 0.8 && randomNumber4 <= 0.9) {
       classUserPlant3.potPoints -= 0.5;
+      playerLevel += 1;
+      level.innerHTML = "You were at level: " + (playerLevel);
     } else {
       classUserPlant3.potPoints += 7;
       warning2.innerHTML = "Computer sabotaged!"
@@ -434,7 +451,7 @@ userPlant3.addEventListener('dragleave', (evt) => {
     classUserPlant3.selected = true;
     userPlant3.remove();
   } else if (classUserPlant3.waterPoints <= 0) {
-    warning1.innerHTML = "Oh no! Plant 3 dried up!"
+    warning1.innerHTML = "Oh no! Plant 3 dried up from not enough water!"
     console.log("Oh no! Your plant dried up :(")
     classUserPlant3.selected = true;
     userPlant3.remove();
