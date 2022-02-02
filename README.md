@@ -7,6 +7,7 @@ Too much can kill them! The computer will try and sabotage you!
 graphics: Adobe Illustrator
 Repl.it
 github
+vecteezy
 
 # Inspo
 I've always liked the colors pink and green, and I always think of plants for whatever reason. Irl, I suck at growing plants so I figured to make a competitive virtual game!
